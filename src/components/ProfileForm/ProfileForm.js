@@ -7,14 +7,14 @@ import {
     Label,
 } from './ProfileForm.styled';
 
-const ProfileForm = () => {
-    // INPUTS CONTROLADOS | 3 PASSOS:
-    // 1. CRIAR OS ESTADOS PARA CADA INPUT
-    // 2. CRIAR AS FUNÇÕES QUE IRÃO MUDAR OS ESTADOS A PARTIR DE UM ONCLICK
-    // 3. CRIAR UM ONCHANGE PARA CADA INPUT E PASSAR PARA DENTRO DELAS A FUNÇÃO QUE FAZ AS MUDANÇAS SETANDO O ESTADO
-    // 4. O VALUE DE CADA INPUT SERA O VALOR DO ESTADO
-    // ------------------------------------------
-
+const ProfileForm = ({
+    name,
+    bio,
+    image,
+    handleNameChange,
+    handleBioChange,
+    handleImageChange,
+}) => {
     return (
         <FormWrapper>
             <h1>Edit your profile</h1>
@@ -27,12 +27,21 @@ const ProfileForm = () => {
                         name="name"
                         id="name"
                         autoComplete="off"
+                        onChange={handleNameChange}
+                        value={name}
                     />
                 </InputWrapper>
 
                 <InputWrapper>
                     <Label htmlFor="bio">Bio</Label>
-                    <Input type="text" name="bio" id="bio" autoComplete="off" />
+                    <Input
+                        type="text"
+                        name="bio"
+                        id="bio"
+                        autoComplete="off"
+                        onChange={handleBioChange}
+                        value={bio}
+                    />
                 </InputWrapper>
 
                 <InputWrapper>
@@ -42,6 +51,8 @@ const ProfileForm = () => {
                         name="imageUrl"
                         id="imageUrl"
                         autoComplete="off"
+                        onChange={handleImageChange}
+                        value={image}
                     />
                 </InputWrapper>
 

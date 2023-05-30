@@ -8,12 +8,10 @@ import {
 } from './ProfileForm.styled';
 
 const ProfileForm = ({
-    name,
-    bio,
-    image,
-    handleNameChange,
-    handleBioChange,
-    handleImageChange,
+    captureTypingInputName,
+    captureTypingInputBio,
+    captureTypingInputImage,
+    submitInformation,
 }) => {
     return (
         <FormWrapper>
@@ -23,24 +21,23 @@ const ProfileForm = ({
                 <InputWrapper>
                     <Label htmlFor="name">Name</Label>
                     <Input
-                        type="text"
+                        Typing="text"
                         name="name"
                         id="name"
                         autoComplete="off"
-                        onChange={handleNameChange}
-                        value={name}
+                        onChange={captureTypingInputName}
                     />
                 </InputWrapper>
 
                 <InputWrapper>
+                    {/* Testando input */}
                     <Label htmlFor="bio">Bio</Label>
                     <Input
                         type="text"
                         name="bio"
                         id="bio"
                         autoComplete="off"
-                        onChange={handleBioChange}
-                        value={bio}
+                        onChange={captureTypingInputBio}
                     />
                 </InputWrapper>
 
@@ -51,12 +48,11 @@ const ProfileForm = ({
                         name="imageUrl"
                         id="imageUrl"
                         autoComplete="off"
-                        onChange={handleImageChange}
-                        value={image}
+                        onChange={captureTypingInputImage}
                     />
                 </InputWrapper>
 
-                <Button>Save Changes</Button>
+                <Button onClick={submitInformation}>Save Changes</Button>
             </Form>
         </FormWrapper>
     );

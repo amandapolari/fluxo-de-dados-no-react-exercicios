@@ -1,5 +1,5 @@
-import { createGlobalStyle } from "styled-components";
-import ProfileScreen from "./screens/ProfileScreen";
+import { createGlobalStyle } from 'styled-components';
+import ProfileScreen from './screens/ProfileScreen';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -24,13 +24,13 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 function App() {
-  return (
-    <>
-      <GlobalStyle />
+    return (
+        <>
+            <GlobalStyle />
 
-      <ProfileScreen />
-    </>
-  );
+            <ProfileScreen />
+        </>
+    );
 }
 
 export default App;

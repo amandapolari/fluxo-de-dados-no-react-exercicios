@@ -1,13 +1,22 @@
-import { ProfileBio, ProfileImage, ProfileName, ProfileWrapper } from "./ProfileMenu.styled";
+import {
+    ProfileBio,
+    ProfileImage,
+    ProfileName,
+    ProfileWrapper,
+} from './ProfileMenu.styled';
 
-const ProfileMenu = () => {
-  return (
-    <ProfileWrapper>
-      <ProfileImage src={"https://picsum.photos/200"} alt="Profile Image" />
-      <ProfileName>Astrodev</ProfileName>
-      <ProfileBio>Dev Full Stack</ProfileBio>
-    </ProfileWrapper>
-  );
+const ProfileMenu = ({ nameMenu, bioMenu, imageMenu }) => {
+    return (
+        <ProfileWrapper>
+            <ProfileImage
+                // src={'https://picsum.photos/200'}
+                src={imageMenu}
+                // alt="Profile Image"
+            />
+            <ProfileName>{nameMenu}</ProfileName>
+            <ProfileBio>{bioMenu}</ProfileBio>
+        </ProfileWrapper>
+    );
 };
 
 export default ProfileMenu;

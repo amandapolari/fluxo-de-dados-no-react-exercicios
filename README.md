@@ -39,4 +39,6 @@ Agora que tudo está integrado, refatore e faça com que a atualização aconte�
 
 https://github.com/labenuexercicios/fluxo-de-dados-no-react-exercicios/assets/71137294/5dabeac8-24a9-4202-a546-188ff62fd978
 
-
+***
+Meu fluxo de árvore do Exercício 1
+![imagem](./img-readme/estrutura-inicial.png)

@@ -5,16 +5,16 @@ import {
     ProfileWrapper,
 } from './ProfileMenu.styled';
 
-const ProfileMenu = ({ name, bio, image }) => {
+const ProfileMenu = ({ nameMenu, bioMenu, imageMenu }) => {
     return (
         <ProfileWrapper>
             <ProfileImage
                 // src={'https://picsum.photos/200'}
-                src={image}
+                src={imageMenu}
                 // alt="Profile Image"
             />
-            <ProfileName>{name}</ProfileName>
-            <ProfileBio>{bio}</ProfileBio>
+            <ProfileName>{nameMenu}</ProfileName>
+            <ProfileBio>{bioMenu}</ProfileBio>
         </ProfileWrapper>
     );
 };

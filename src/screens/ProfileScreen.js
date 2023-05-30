@@ -11,24 +11,38 @@ function ProfileScreen() {
     // 4. O VALUE DE CADA INPUT SERA O VALOR DO ESTADO
     // ------------------------------------------
     // 1 [x]:
+    // Form
     const [name, setName] = useState('');
     const [bio, setBio] = useState('');
     const [image, setImage] = useState('');
+
+    // Menu
+    const [nameMenu, setNameMenu] = useState('Astrodev');
+    const [bioMenu, setBioMenu] = useState('Dev Full Stack');
+    const [imageMenu, setImageMenu] = useState('https://picsum.photos/200');
+
     // 2 [x]:
     const handleNameChange = (event) => {
         setName(event.target.value);
+        setNameMenu(event.target.value);
     };
     const handleBioChange = (event) => {
         setBio(event.target.value);
+        setBioMenu(event.target.value);
     };
     const handleImageChange = (event) => {
         setImage(event.target.value);
+        setImageMenu(event.target.value);
     };
     // 3 [x] e 4 [x]:
 
     return (
         <ScreenContainer>
-            <ProfileMenu name={name} bio={bio} image={image} />
+            <ProfileMenu
+                nameMenu={nameMenu}
+                bioMenu={bioMenu}
+                imageMenu={imageMenu}
+            />
 
             <ProfileForm
                 name={name}

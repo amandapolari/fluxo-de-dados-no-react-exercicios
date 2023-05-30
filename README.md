@@ -19,7 +19,7 @@ Garanta que a edição dos campos do formulário reflitam nos valores do menu do
 Não se preocupe em implementar o uso do botão, faça tudo funcionar automaticamente por enquanto:
 - digita no input, atualiza automaticamente o menu lateral
 
-# Exercício 3
+### Exercício 3
 
 Agora que tudo está integrado, refatore e faça com que a atualização aconteça apenas quando o botão for clicado.
 

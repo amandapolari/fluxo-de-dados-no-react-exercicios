@@ -4,6 +4,24 @@ import ProfileMenu from '../components/ProfileMenu/ProfileMenu';
 import { ScreenContainer } from './ProfileScreen.styled';
 
 function ProfileScreen() {
+    // ESTADOS FORM:
+    const [name, setName] = useState('');
+    const [bio, setBio] = useState('');
+    const [image, setImage] = useState('');
+
+    const handleNameChange = (event) => {
+        setName(event.target.value);
+        SetStorageName(event.target.value);
+    };
+    const handleBioChange = (event) => {
+        setBio(event.target.value);
+        SetStorageBio(event.target.value);
+    };
+    const handleImageChange = (event) => {
+        setImage(event.target.value);
+        SetStorageImage(event.target.value);
+    };
+
     // ESTADOS DO MENU:
     const [nameMenu, setNameMenu] = useState('Astrodev');
     const [bioMenu, setBioMenu] = useState('Dev Full Stack');
@@ -14,25 +32,15 @@ function ProfileScreen() {
     const [storageBio, SetStorageBio] = useState('');
     const [storageImage, SetStorageImage] = useState('');
 
-    // FUNÇÕES QUE MUDAM OS ESTADOS DE ARMAZENAMENTO:
-    const captureTypingInputName = (event) => {
-        SetStorageName(event.target.value);
-    };
-
-    const captureTypingInputBio = (event) => {
-        SetStorageBio(event.target.value);
-    };
-
-    const captureTypingInputImage = (event) => {
-        SetStorageImage(event.target.value);
-    };
-
     // FUNÇÃO DO BOTÃO QUE VAI APLICAR AS MUDANÇAS DE ESTADO DE ARMAZENAMENTO NOS ESTADOS DO MENU:
     const submitInformation = (event) => {
         event.preventDefault();
         setNameMenu(storageName);
         setBioMenu(storageBio);
         setImageMenu(storageImage);
+        setName('');
+        setBio('');
+        setImage('');
     };
 
     return (
@@ -44,9 +52,12 @@ function ProfileScreen() {
             />
 
             <ProfileForm
-                captureTypingInputName={captureTypingInputName}
-                captureTypingInputBio={captureTypingInputBio}
-                captureTypingInputImage={captureTypingInputImage}
+                name={name}
+                bio={bio}
+                image={image}
+                handleNameChange={handleNameChange}
+                handleBioChange={handleBioChange}
+                handleImageChange={handleImageChange}
                 submitInformation={submitInformation}
             />
         </ScreenContainer>
